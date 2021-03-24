@@ -12,16 +12,19 @@ function App() {
       <Navbar bg="light" expand="lg">
         <Navbar.Brand>User Management Portal</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/users">Users</Nav.Link>
-          <Nav.Link href="/login">Login</Nav.Link>
+          <Link to="/">Home</Link>
+          <Link to="/users">Users</Link>
+          <Link to="/login">Login</Link>
         </Nav>
       </Navbar>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/users" component={Users} />
-        <Route path="/users/:username" render={(props) => <User {...props} />} />
+        <Route
+          path="/users/:username"
+          render={(props) => <User {...props} />}
+        />
       </Switch>
     </div>
   );
